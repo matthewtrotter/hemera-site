@@ -559,20 +559,21 @@ h3 {
 
 .company-facts {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 0;
+  max-width: 860px;
   margin: 0;
+  border-top: 1px solid var(--line);
 }
 
 .company-facts div {
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--paper);
+  display: grid;
+  grid-template-columns: minmax(180px, 0.3fr) minmax(0, 1fr);
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .company-facts dt {
-  margin-bottom: 8px;
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -644,9 +645,13 @@ address span {
     min-height: 620px;
   }
 
-  .service-grid,
-  .company-facts {
+  .service-grid {
     grid-template-columns: 1fr;
+  }
+
+  .company-facts div {
+    grid-template-columns: 1fr;
+    gap: 6px;
   }
 }
 

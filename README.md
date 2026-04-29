@@ -22,5 +22,4 @@ After registering a domain in Cloudflare:
 
 ## Contact
 
-The site currently notes that contact email is pending custom domain registration.
-Update the contact section after the final domain is registered and email routing is configured.
+The public contact address is `support@hemeraengineering.com`.

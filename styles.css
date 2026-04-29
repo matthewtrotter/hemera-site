@@ -226,30 +226,140 @@ h3 {
   background: var(--line);
 }
 
-.chat-row {
+.voice-thread {
+  display: grid;
+  gap: 12px;
+}
+
+.voice-row {
   display: flex;
-  margin-bottom: 12px;
+  align-items: center;
+  gap: 10px;
 }
 
-.chat-row span {
-  max-width: 78%;
-  padding: 12px 14px;
-  border-radius: 8px;
-  font-weight: 700;
-}
-
-.chat-row.learner {
+.voice-row.learner {
   justify-content: flex-end;
 }
 
-.chat-row.learner span {
-  background: #e7eefc;
-  color: #1d4ed8;
+.avatar {
+  display: grid;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  font-size: 0.76rem;
+  font-weight: 900;
 }
 
-.chat-row.coach span {
-  background: #ecf7f4;
+.voice-bubble,
+.phone-voice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(78%, 300px);
+  min-height: 48px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #e3f4eb;
   color: var(--teal-dark);
+}
+
+.voice-row.learner .voice-bubble,
+.phone-voice.outgoing {
+  background: #dcf7c8;
+}
+
+.play-dot,
+.mic-dot {
+  display: grid;
+  flex: 0 0 auto;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+.play-dot::before {
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 9px solid #fff;
+  content: "";
+}
+
+.waveform {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 4px;
+  min-width: 86px;
+}
+
+.waveform i {
+  width: 4px;
+  height: 14px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.72;
+}
+
+.waveform i:nth-child(2),
+.waveform i:nth-child(5) {
+  height: 24px;
+}
+
+.waveform i:nth-child(3),
+.waveform i:nth-child(6) {
+  height: 10px;
+}
+
+.waveform i:nth-child(4),
+.waveform i:nth-child(7) {
+  height: 30px;
+}
+
+.voice-bubble small,
+.phone-voice small {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.recording-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  margin-top: 8px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  background: #f4f7f5;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.recording-bar strong {
+  margin-left: auto;
+  color: var(--ink);
+}
+
+.mic-dot {
+  width: 24px;
+  height: 24px;
+  background: var(--red);
+}
+
+.mic-dot::before {
+  width: 8px;
+  height: 12px;
+  border-radius: 999px;
+  background: #fff;
+  content: "";
 }
 
 .progress-strip {
@@ -394,43 +504,83 @@ h3 {
   width: min(74%, 250px);
   min-height: 280px;
   margin: 28px auto;
-  padding: 18px;
+  padding: 12px;
   border: 10px solid var(--ink);
   border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(255, 244, 219, 0.72), rgba(236, 247, 244, 0.82)),
+    #fff;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: -2px -2px 14px;
+  padding: 10px;
+  border-radius: 18px 18px 8px 8px;
+  background: var(--teal-dark);
+  color: #fff;
+}
+
+.chat-header strong,
+.chat-header small {
+  display: block;
+}
+
+.chat-header small {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.75rem;
+}
+
+.message-line {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.message-line span {
+  max-width: 82%;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--teal-dark);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.phone-voice {
+  width: 88%;
+  margin-bottom: 10px;
   background: #fff;
 }
 
-.lesson-card {
-  padding: 16px;
-  border-radius: 8px;
-  background: #ecf7f4;
+.phone-voice.outgoing {
+  margin-left: auto;
 }
 
-.lesson-card p {
-  margin: 8px 0 0;
-  font-size: 0.92rem;
+.phone-voice .waveform {
+  min-width: 64px;
+  gap: 3px;
 }
 
-.lesson-badge {
-  display: inline-block;
-  margin-bottom: 10px;
-  color: var(--teal-dark);
-  font-size: 0.75rem;
+.phone-voice .waveform i {
+  width: 3px;
+}
+
+.reply-dock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.reply-field {
+  color: var(--muted);
+  font-size: 0.82rem;
   font-weight: 800;
-  text-transform: uppercase;
-}
-
-.phrase-pill {
-  margin-top: 14px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  background: #f4f7f5;
-  font-weight: 800;
-}
-
-.phrase-pill.accent {
-  background: #fff4db;
-  color: #7c4a03;
 }
 
 .dashboard-shot {

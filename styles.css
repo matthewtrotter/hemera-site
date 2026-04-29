@@ -3,14 +3,17 @@
   --ink: #172121;
   --muted: #586461;
   --line: #d9e1dc;
-  --paper: #fbfcf9;
+  --paper: #fffdf7;
   --panel: #ffffff;
-  --sage: #dbe8df;
+  --sage: #e4efe8;
   --teal: #0f766e;
   --teal-dark: #115e59;
-  --gold: #c48a28;
+  --gold: #d79a2b;
+  --gold-soft: #fff1c7;
+  --sky: #dcecff;
   --red: #dc4c3f;
   --shadow: 0 18px 45px rgba(23, 33, 33, 0.12);
+  --glow: 0 20px 70px rgba(215, 154, 43, 0.24);
 }
 
 * {
@@ -58,15 +61,46 @@ a {
 }
 
 .brand-mark {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
   display: grid;
   width: 42px;
   height: 42px;
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(215, 154, 43, 0.92) 0 34%, transparent 34% 45%, rgba(23, 33, 33, 0.98) 45%),
+    var(--ink);
   color: #fff;
+  font-size: 1.05rem;
   font-weight: 800;
+  line-height: 1;
+  text-align: center;
+  text-shadow: 0 1px 8px rgba(23, 33, 33, 0.65);
+  overflow: hidden;
+}
+
+.brand-mark::before {
+  position: absolute;
+  top: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold-soft);
+  box-shadow: 0 0 22px rgba(255, 241, 199, 0.95);
+  content: "";
+}
+
+.brand-mark::after {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.82);
+  content: "";
 }
 
 .brand strong,
@@ -108,7 +142,8 @@ nav a:hover {
   min-height: calc(100vh - 79px);
   padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 72px) 56px;
   background:
-    linear-gradient(120deg, rgba(219, 232, 223, 0.88), rgba(251, 252, 249, 0.65) 46%),
+    radial-gradient(circle at 18% 18%, rgba(255, 241, 199, 0.92), transparent 24%),
+    linear-gradient(120deg, rgba(228, 239, 232, 0.88), rgba(255, 253, 247, 0.65) 48%),
     linear-gradient(180deg, #fff, var(--paper));
 }
 
@@ -179,12 +214,12 @@ h3 {
 }
 
 .button.primary {
-  background: var(--ink);
+  background: linear-gradient(135deg, var(--ink), #243230);
   color: #fff;
 }
 
 .button.secondary {
-  background: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .hero-visual {
@@ -205,6 +240,7 @@ h3 {
   top: 0;
   right: 8%;
   padding: 20px;
+  box-shadow: var(--shadow), var(--glow);
 }
 
 .market-preview {
@@ -433,7 +469,9 @@ h3 {
 }
 
 .intro-band {
-  background: var(--ink);
+  background:
+    linear-gradient(90deg, rgba(215, 154, 43, 0.18), transparent 36%),
+    var(--ink);
   color: #fff;
 }
 
@@ -447,6 +485,77 @@ h3 {
 .section-heading {
   max-width: 760px;
   margin-bottom: 32px;
+}
+
+.about-section {
+  background:
+    linear-gradient(180deg, #fff, var(--paper));
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.36fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  max-width: 1080px;
+}
+
+.about-copy {
+  max-width: 760px;
+}
+
+.about-copy p {
+  color: var(--muted);
+  font-size: clamp(1.04rem, 1.6vw, 1.18rem);
+}
+
+.daybreak-mark {
+  position: relative;
+  display: grid;
+  width: min(100%, 280px);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgba(23, 33, 33, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, var(--sky) 0 45%, #fff 45% 47%, var(--ink) 47% 100%);
+  box-shadow: var(--glow);
+  overflow: hidden;
+}
+
+.daybreak-mark::before {
+  position: absolute;
+  top: 34px;
+  width: 112px;
+  height: 112px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 60px rgba(215, 154, 43, 0.55);
+  content: "";
+}
+
+.daybreak-mark::after {
+  position: absolute;
+  right: 38px;
+  bottom: 64px;
+  left: 38px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.84);
+  content: "";
+}
+
+.daybreak-mark span {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  font-size: 6rem;
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 0 4px 24px rgba(23, 33, 33, 0.45);
+}
+
+.daybreak-mark span::before {
+  content: "H";
 }
 
 .service-grid {
@@ -471,7 +580,8 @@ h3 {
 }
 
 .apps-section {
-  background: #eef4f0;
+  background:
+    linear-gradient(180deg, #eef4f0, #fff8e8);
 }
 
 .app-list {
@@ -588,7 +698,8 @@ h3 {
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.56fr);
   gap: 28px;
   align-items: center;
-  background: var(--sage);
+  background:
+    linear-gradient(120deg, var(--sage), var(--gold-soft));
 }
 
 address {
@@ -628,6 +739,7 @@ address span {
 @media (max-width: 900px) {
   .hero,
   .app-panel,
+  .about-layout,
   .contact-section {
     grid-template-columns: 1fr;
   }

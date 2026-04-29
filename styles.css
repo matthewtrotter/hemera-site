@@ -206,13 +206,15 @@ h3 {
 .language-preview {
   top: 0;
   right: 8%;
+  z-index: 2;
   padding: 20px;
   box-shadow: var(--shadow), var(--glow);
 }
 
 .market-preview {
   right: 0;
-  bottom: 0;
+  bottom: 54px;
+  z-index: 1;
   padding: 18px;
 }
 
@@ -377,58 +379,13 @@ h3 {
   text-align: right;
 }
 
-.chart-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: end;
-  gap: 10px;
-  height: 150px;
-  padding: 16px;
+.market-preview-image {
+  display: block;
+  width: 100%;
+  height: 220px;
   border-radius: 8px;
-  background: #f4f7f5;
-}
-
-.chart-grid span {
-  min-height: 44px;
-  border-radius: 6px 6px 0 0;
-}
-
-.chart-grid .up {
-  height: 70%;
-  background: var(--teal);
-}
-
-.chart-grid .down {
-  height: 48%;
-  background: var(--red);
-}
-
-.chart-grid .flat {
-  height: 32%;
-  background: var(--gold);
-}
-
-.chart-grid .tall {
-  height: 94%;
-}
-
-.matrix,
-.heatmap {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.matrix span,
-.heatmap span {
-  display: grid;
-  min-height: 42px;
-  place-items: center;
-  border-radius: 7px;
-  background: #eef4f0;
-  color: var(--teal-dark);
-  font-weight: 800;
+  object-fit: cover;
+  object-position: 86% 14%;
 }
 
 .section {
@@ -560,45 +517,13 @@ h3 {
   height: auto;
 }
 
-.dashboard-shot {
-  padding: 22px;
-}
-
-.dash-toolbar {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 18px;
-}
-
-.dash-toolbar span {
-  padding: 8px 10px;
-  border-radius: 8px;
-  background: var(--ink);
-  color: #fff;
-  font-size: 0.84rem;
-  font-weight: 800;
-}
-
-.heatmap {
-  margin-top: 0;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.heatmap span {
-  min-height: 78px;
-  color: #fff;
-}
-
-.heatmap .gain {
-  background: var(--teal);
-}
-
-.heatmap .loss {
-  background: var(--red);
-}
-
-.heatmap .flat {
-  background: var(--gold);
+.dashboard-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: left top;
 }
 
 .company-section {

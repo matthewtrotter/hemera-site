@@ -254,8 +254,7 @@ h3 {
   font-weight: 900;
 }
 
-.voice-bubble,
-.phone-voice {
+.voice-bubble {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -267,8 +266,7 @@ h3 {
   color: var(--teal-dark);
 }
 
-.voice-row.learner .voice-bubble,
-.phone-voice.outgoing {
+.voice-row.learner .voice-bubble {
   background: #dcf7c8;
 }
 
@@ -324,8 +322,7 @@ h3 {
   height: 30px;
 }
 
-.voice-bubble small,
-.phone-voice small {
+.voice-bubble small {
   color: var(--muted);
   font-weight: 800;
 }
@@ -500,87 +497,19 @@ h3 {
   overflow: hidden;
 }
 
-.phone-shell {
-  width: min(74%, 250px);
-  min-height: 280px;
-  margin: 28px auto;
-  padding: 12px;
-  border: 10px solid var(--ink);
-  border-radius: 28px;
+.language-shot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background:
     linear-gradient(135deg, rgba(255, 244, 219, 0.72), rgba(236, 247, 244, 0.82)),
-    #fff;
+    #f8faf8;
 }
 
-.chat-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: -2px -2px 14px;
-  padding: 10px;
-  border-radius: 18px 18px 8px 8px;
-  background: var(--teal-dark);
-  color: #fff;
-}
-
-.chat-header strong,
-.chat-header small {
+.voice-chat-illustration {
   display: block;
-}
-
-.chat-header small {
-  color: rgba(255, 255, 255, 0.74);
-  font-size: 0.75rem;
-}
-
-.message-line {
-  display: flex;
-  margin-bottom: 10px;
-}
-
-.message-line span {
-  max-width: 82%;
-  padding: 8px 10px;
-  border-radius: 8px;
-  background: #fff;
-  color: var(--teal-dark);
-  font-size: 0.86rem;
-  font-weight: 800;
-}
-
-.phone-voice {
-  width: 88%;
-  margin-bottom: 10px;
-  background: #fff;
-}
-
-.phone-voice.outgoing {
-  margin-left: auto;
-}
-
-.phone-voice .waveform {
-  min-width: 64px;
-  gap: 3px;
-}
-
-.phone-voice .waveform i {
-  width: 3px;
-}
-
-.reply-dock {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 18px;
-  padding: 8px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
-}
-
-.reply-field {
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-weight: 800;
+  width: min(86%, 260px);
+  height: auto;
 }
 
 .dashboard-shot {
